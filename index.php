@@ -58,9 +58,43 @@
 
     <div class="container py-5">
 
-        <h1 class="text-center">
+        <h1 class="text-center mb-4">
             Trova il tuo Hotel
         </h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Descrizione</th>
+                    <th>Parcheggio</th>
+                    <th>Voto</th>
+                    <th>Distanza dal Centro</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <?php
+                foreach($hotels as $key => $currentHotel) {
+                    echo "
+                    <tr>
+                        <th> " . $key + 1 . " </th>
+                        ";
+                        foreach($currentHotel as $value) {
+                            echo "
+                            <td>$value</td>
+                            ";
+                        }
+                    echo "
+                    </tr>
+                    ";
+                }
+                ?>
+                
+            </tbody>
+            </table>
 
     </div>
 
